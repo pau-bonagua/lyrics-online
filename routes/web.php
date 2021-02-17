@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::resource('artists', 'ArtistController');
+Route::resource('songs', 'SongController');
+Route::get('songs-load', 'SongController@loadSongs')->name('songsHome');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
